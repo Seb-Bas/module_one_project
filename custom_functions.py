@@ -29,6 +29,7 @@ def plot_profit_by_genre(genres_df):
     sns.barplot(x = 'genre', y = 'profit', data = genres_df, color = 'crimson')
     plt.title('\nMean Profit by Genre\n', fontsize = 18)
     plt.ylabel('Mean Profit in Millions of Dollars\n', fontsize = 16)
+    plt.yticks(fontsize = 16)
     plt.xticks(rotation=60, fontsize = 16)
     plt.xlabel('Genre', fontsize = 16)
     plt.xticks(fontsize = 16)
@@ -36,14 +37,22 @@ def plot_profit_by_genre(genres_df):
     return
 
 def plot_oscar_dramaadventure_directors(directors_by_profit_oscars):
-    plt.figure(figsize = (15,8))
-    plt.scatter(x = directors_by_profit_oscars.index, y = directors_by_profit_oscars['profit'], s =     (directors_by_profit_oscars['nominations'])*500, color = 'crimson')
-    plt.ylim(180, 500)
-    plt.xticks(rotation=50, fontsize = 14)
-    plt.xlabel('Director', fontsize = 14)
-    plt.title('\nOscar-Nominated Drama/Adventure Directors\' Average Film Profit\n', fontsize = 16)
-    plt.ylabel('Average Profit / Film\n (millions of dollars)', fontsize = 14)
-    plt.show()
+    directors_by_profit_oscars.reset_index(inplace = True)
+    plt.figure(figsize = (20,12))
+    z = directors_by_profit_oscars['nominations'].values
+    y = directors_by_profit_oscars['profit'].values
+    n = directors_by_profit_oscars['director'].values
+    plt.scatter(x = z, y = y, s = 4000, color = 'crimson', alpha = .7)
+    for i, txt in enumerate(n):
+        plt.annotate(txt, (z[i], y[i]), fontsize = 18, fontweight = 'bold', color = 'black')
+    plt.title('\nProfit and Oscar Nominations for Drama/Adventure Directors\n', fontsize = 22)
+    plt.xlabel('\nNumber of Oscar Nominations', fontsize = 16, fontweight = 'bold')
+    plt.xticks(range(0,12),fontsize = 16)
+    plt.ylabel('Mean Profit per Film \n(millions of dollars)\n', fontsize = 16, fontweight = 'bold')
+    plt.yticks(fontsize = 16)
+    plt.xlim(0,12)
+    plt.ylim(100, 600)
+    plt.show()       
     return
 
 def plot_oscar_nominations_by_genre(genres_df):
@@ -51,8 +60,10 @@ def plot_oscar_nominations_by_genre(genres_df):
     plt.figure(figsize = (15,8))
     sns.barplot(x = 'genre', y = 'oscar_nominations', data = genres_df, color = 'crimson')
     plt.xticks(rotation=60, fontsize = 16)
+    plt.yticks(fontsize = 16)
     plt.xlabel('Genre', fontsize = 16)
     plt.ylabel('Oscar Nominations \n', fontsize = 16)
+    plt.title('\nProfit and Oscar Nominations for Drama/Adventure Directors\n', fontsize = 22)
     plt.title('\nNumber of Oscar Nominations by Genre\n', fontsize = 18)
     plt.show()
     return
@@ -67,6 +78,7 @@ def plot_actors(actors):
     plt.figure(figsize = (15,6))
     sns.barplot(x = actors_plot, y = profits_plot, color = 'crimson')
     plt.xticks(rotation=80, fontsize = 12)
+    plt.yticks(fontsize = 12)
     plt.xlabel('Actor', fontsize = 12)
     plt.ylabel('Mean Profits in Millions of Dollars \n (per movie actor starred in)', fontsize = 12)
     plt.title('Profits Drama/Adventure Actors Bring on Average Per Oscar-Nominated Film \n', fontsize = 14)
