@@ -6,7 +6,6 @@ import pickle
 sns.set(style="whitegrid")
 #%matplotlib inline
     
-
 def call_my_pickles():
     with open ('my_pickles/merged_data.p', 'rb') as readfile:
         merged_data = pickle.load(readfile)
@@ -36,19 +35,16 @@ def plot_profit_by_genre(genres_df):
     plt.show()
     return
 
-def plot_oscar_comedydrama_directors(directors_by_profit_oscars):
+def plot_oscar_dramaadventure_directors(directors_by_profit_oscars):
     plt.figure(figsize = (15,8))
-    plt.scatter(x = directors_by_profit_oscars.index, y = directors_by_profit_oscars['profit'], \
-                s = (directors_by_profit_oscars['nominations']**1.)*1000, color = 'crimson')
-    plt.ylim(90, 350)
-    plt.xlim(-1,10)
+    plt.scatter(x = directors_by_profit_oscars.index, y = directors_by_profit_oscars['profit'], s =     (directors_by_profit_oscars['nominations'])*500, color = 'crimson')
+    plt.ylim(180, 500)
     plt.xticks(rotation=50, fontsize = 14)
     plt.xlabel('Director', fontsize = 14)
-    plt.title('\nOscar-Nominated Comedy/Drama Directors\' Average Film Profit\n', fontsize = 16)
+    plt.title('\nOscar-Nominated Drama/Adventure Directors\' Average Film Profit\n', fontsize = 16)
     plt.ylabel('Average Profit / Film\n (millions of dollars)', fontsize = 14)
     plt.show()
     return
-
 
 def plot_oscar_nominations_by_genre(genres_df):
     genres_df.sort_values(by = ['oscar_nominations'], ascending = False, inplace = True, )
@@ -67,13 +63,14 @@ def plot_actors(actors):
     for actor in actors:
         actors_plot.append(actor[0])
         profits_plot.append(actor[1])
-        
+
     plt.figure(figsize = (15,6))
-    sns.scatterplot(x = actors_plot, y = profits_plot, color = 'crimson')
-    plt.xticks(rotation=80)
-    plt.xlabel('Actor')
-    plt.ylabel('Mean Profits in Millions of Dollars \n (per movie actor starred in)')
-    plt.title('Profits Drama/Comedy Actors Bring on Average Per Film \n')
+    sns.barplot(x = actors_plot, y = profits_plot, color = 'crimson')
+    plt.xticks(rotation=80, fontsize = 12)
+    plt.xlabel('Actor', fontsize = 12)
+    plt.ylabel('Mean Profits in Millions of Dollars \n (per movie actor starred in)', fontsize = 12)
+    plt.title('Profits Drama/Adventure Actors Bring on Average Per Oscar-Nominated Film \n', fontsize = 14)
+    plt.ylim(350,700)
     plt.show()
     return
 
