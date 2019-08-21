@@ -17,23 +17,25 @@ Collected & saved standard data files to main data file as well as adding more d
 TMDb Movies
 Oscars Data
 
-After exploring each file, we summarized the raw data sets into topcs and their features to quickly references which data is need to validate Micrsoft investiment.  Finally joined various data sources and elminated duplicates to have the most accurate projections possible. 
+After exploring each file, we summarized the raw data sets into topics and their features to quickly references which data is need to validate Microsoft investment.  Finally joined various data sources and eliminated duplicates to have the most accurate projections possible. 
 
-## Questions Answered by Data (Recomendationss)
+## Questions Answered by Data (Recommendations)
 
 # Genre
-Film genre biggest factor of winning an Oscar.  Dramas have won the most Oscars.  Microsoft must produce a drama.  In addition, if Microsoft would like to increase both revs and profits, then they should invest into drama comedy.  It doesn't decrease the odds of winning Oscars but much at all but does significantly increase profitabilit
+Film genre biggest factor of winning an Oscar.  Dramas have won the most Oscars.  Microsoft must produce a drama.  In addition, if Microsoft would like to increase both revs and profits, then they should invest into drama comedy.  It doesn't decrease the odds of winning Oscars but much at all but does significantly increase profitability
+
 
 # Diretor
-It's critical for Micorosft to next focus on selcting director after moving forward with genre recomendation.  We provided two tiers of diretors to recruit as well as other options.  By the way, some profit expectations:  
+It's critical for Microsoft to next focus on selecting director after moving forward with genre recommendation.  We provided two tiers of directors to recruit as well as other options.  By the way, some profit expectations:   
 
 Tier 1 directors average profits are between 250 to 350m
 Tier 2 directors average profits are between 150 to 250m
 
 # Director and Actors
-Investing into well established actors and directors should provide a baseline of revenue expections to limit financil risks.  In addition, certian directors and actors have a history of winning oscars; therefore, focusing on hiring them are key to goal of getting oscar nominations.  
+Investing into successful actors and directors should provide a baseline of revenue expectations to limit financial risks.  In addition, certain directors and actors have a history of winning oscars; therefore, focusing on hiring them are key to goal of getting Oscar nominations.  
 
 Tier 1 actors average revs are between 450m to 575m in revs.  
 Tier 2 actors its between 425m to 450m.
+
 
 
